@@ -76,3 +76,7 @@ console.log(afficher(formationJS));
 // alors on va remonter la chaine parente de prototype jusqu'a tomber sur une propriété 
 // qui correspond dans les prototypes parents (on peut aller au max jusqu'à Object)
 console.log(formationJS);
+
+
+// bubbling = facon dont les evenements sont gérés dans une page web
+// A voir plu sen profondeur
