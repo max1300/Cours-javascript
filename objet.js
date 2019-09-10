@@ -79,4 +79,63 @@ console.log(formationJS);
 
 
 // bubbling = facon dont les evenements sont gérés dans une page web
-// A voir plu sen profondeur
+// A voir plus en profondeur
+
+
+// objet via function
+// Par convention les functions qui representent 
+// les objets commencent par une majuscule
+// ici creation d'un objet Formation de manière générique
+// afin de rentrer les valeurs que l'on désire à 
+// l'initialisation de l'objet
+function Formation(nom, langage, dateDebut, dateFin){
+    this.nom = nom;
+    this.langage = langage;
+    this.dateDebut = dateDebut;
+    this.dateFin = dateFin;
+}
+
+var formation = new Formation('Formation JavaScript', 'JavaScript', '09/09/2019', '20/09/2019');
+
+console.log('nom de la formation: ' + formation.nom + '\nlangage de la formation: ' + formation.langage +
+                '\ndate de début de la formation: ' + formation.dateDebut + 
+                '\ndate de fin de la formation: ' + formation.dateFin
+);
+
+
+// notions d'heritage
+function Personne(nom, prenom, age){
+    this.nom = nom;
+    this.prenom = prenom;
+    this.age = age;
+}
+
+function Stagiaire(nom, prenom, age, connaissance){
+    // le Personne.call permet d'aasocier les deux objets par heritage
+    // car l'heritage fonctionne par prototype, c'est à dire qu'un
+    // objet hérite d'un objet
+    Personne.call(this, nom, prenom, age);
+    this.connaissance = connaissance;
+}
+
+// instancie le Stagiaire sur le constructeur de Personne
+Stagiaire.prototype = new Personne('Dupont', 'Bernard', 39, 'JavaScript');
+
+console.log(Stagiaire.prototype instanceof Personne);
+
+// permet de verifier si Stagiaire est bien une instance (ou herite bien) de Personne
+var stagiaire = new Stagiaire('Dupont', 'Bernard', 39, 'JavaScript');
+console.log(stagiaire instanceof Personne);
+console.log(stagiaire instanceof Stagiaire);
+
+
+// la notion de scopes
+var nom = 'Renaud';
+
+function sayHello(){
+    var nom = 'Nico';
+    console.log('Nom: ' + nom);
+}
+
+sayHello();
+console.log('Nom: ' + nom);
