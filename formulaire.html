@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulaire</title>
+</head>
+<body onload="app.init()">
+
+    <form onsubmit="validateForm()">
+        <h1>Formulaire test JS</h1>
+
+        <p>
+            <label for="nom">Nom :</label>
+            <input type="text" name="nom" id="nom" placeholder= "nom..."  required>
+            <span id="aideNom"></span>
+        </p>
+
+        <p>
+            <label for="prenom">Prenom :</label>
+            <input type="text" name="prenom" id="prenom" placeholder="prenom...">
+            <span id="aidePrenom"></span>
+        </p>
+
+        <p>
+            <label for="telephone">Telephone :</label>
+            <input type="tel" name="telephone" id="telephone" placeholder="telephone...">
+            <span id="aideTel"></span>
+        </p>
+
+        <p>
+            <label for="mail">Mail :</label>
+            <input type="text" name="mail" id="mail" placeholder="mail...">
+            <span id="aideMail"></span>
+        </p>
+
+        <input type="submit" value="Envoyer" id="submit">
+
+        <input onclick="reset()" type='submit' value="Reset" id="reset">
+
+    </form>
+
+    <script type="text/javascript" src="formulaire.js"></script>
+</body>
+</html>

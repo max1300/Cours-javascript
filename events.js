@@ -148,18 +148,3 @@ function supprimer(){
 };
 
 
-
-function test (nom, cb) {
-
-    setTimeout(function () {
-        cb({
-            nom: 'test'
-        })
-
-    }, 1000);
-
-} 
-
-test('mouseover', function (event) {
-    console.log('callback run', event);
-})
