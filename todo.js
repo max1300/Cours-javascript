@@ -26,22 +26,20 @@ var tasks = [
 var app = {
     init: function(){
         
-        this.doneOrNot();
-        this.addCheckbox();
-        this.delIf();
         
-       
-
-
-
-
+        this.addCheckbox();
+        this.doneOrNot();
+        
     },
     
     addCheckbox: function(){
-        addInput();
-        addLabel();
+        var self = this;
         
-       
+        for(i = 0; i < tasks.length; i++){
+            addInput();
+            addLabel();
+        }
+        
     },
 
     doneOrNot: function(){
@@ -56,39 +54,34 @@ var app = {
             }
 
         }
-
-
-    },
-
-    delIf: function(){
-
-        for(i= 0; i < tasks.length; i++){
-
-            var labels = document.getElementsByTagName('label');
-            var lab = labels[i];
-
-            if(tasks[i].isDone == true){
-                var del = document.createElement('del');
-                del.value = tasks[i].titre;
-                console.log(del.innerHTML);
-                document.body.insertBefore(del, lab.nextSibling);
-                console.log(labels[id]);
-                
-            }
-
-        }
     }
 }
 
 
+var liste = document.getElementById("liste");
+
+function addInput(){
+    var checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.name = 'name' + tasks[i];
+    checkbox.id = 'id' + tasks[i];
+    liste.appendChild(checkbox);
+
+}
+
 
 function addLabel(){
-    for(i= 0; i < tasks.length; i++){
-        
-        var labels = document.getElementsByTagName('label');
-        var label = document.createTextNode(tasks[i].titre);
-        document.getElementById(labels[i].id).appendChild(label);
-    }
+    var label = document.createElement('label');
+    var text = document.createTextNode(tasks[i].titre);
+    label.appendChild(text);
+    liste.appendChild(label);
+    addBr();
+
+}
+
+function addBr(){
+    var espace = document.createElement('br');
+    liste.appendChild(espace);
 }
 
 
