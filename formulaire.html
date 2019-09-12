@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Formulaire</title>
+    <link rel="stylesheet" href="formulaire.css">
 </head>
 <body onload="app.init()">
 
-    <form id='inscription' onsubmit="validateForm()">
+    <form id='inscription'>
         <h1>Formulaire test JS</h1>
 
         <p>
             <label for="nom">Nom :</label>
-            <input type="text" name="nom" id="nom" placeholder= "nom..."  required>
+            <input type="text" name="nom" id="nom" placeholder= "nom..." >
             <span id="aideNom"></span>
         </p>
 
@@ -35,9 +36,9 @@
             <span id="aideMail"></span>
         </p>
 
-        <input type="submit" value="Envoyer" id="submit">
+        <input onclick= 'validation()' type="submit" value="Envoyer" id="submit">
 
-        <input onclick="reset()" type='reset' value="reset" id="reset">
+        <input onclick="reset()" type='submit' value="reset" id="reset">
 
     </form>
 
