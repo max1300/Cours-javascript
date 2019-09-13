@@ -1,0 +1,11 @@
+header {
+    display: flex;
+}
+
+.header__title {
+    color: royalblue;
+}
+
+.todo__checked {
+    text-decoration: line-through;
+}
