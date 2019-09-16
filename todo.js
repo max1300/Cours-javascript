@@ -4,7 +4,7 @@ var app = {
         this.emptyList();
     },
     emptyList: function(){
-        var p = document.getElementById('nique-ta-mere');
+        var p  = document.getElementById('nique-ta-mere');
         var li = document.getElementsByTagName('li');
         if(li && li.length > 0){
             p.style.visibility = hidden;
@@ -17,16 +17,16 @@ function createNewTask(){
     var li = document.createElement('li');
     liste.appendChild(li);
 
-    var checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
+    var checkbox       = document.createElement('input');
+    checkbox.type      = 'checkbox';
     checkbox.className = 'box';
-    checkbox.name = 'name';
-    checkbox.id = 'id';
-    checkbox.onclick = textBarre;
+    checkbox.name      = 'name';
+    checkbox.id        = 'id';
+    checkbox.onclick   = textBarre;
     li.appendChild(checkbox);
     
-    var label = document.createElement('label');
-    var text = document.createTextNode(document.getElementById('myInput').value);
+    var label          = document.createElement('label');
+    var text           = document.createTextNode(document.getElementById('myInput').value);
     label.appendChild(text);
     li.appendChild(label);
 }
@@ -49,7 +49,7 @@ function textBarre(){
 
 
 function supprimer(){
-    var li = document.getElementsByTagName('li');
+    var li    = document.getElementsByTagName('li');
     var count = li.length;
     for(i = 0; i < count; i++){
         li[0].remove();

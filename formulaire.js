@@ -2,11 +2,11 @@
 // et une fonction isValid() qui nous permet de controler
 // si les attributs ne sont plus undefined
 var model = {
-    nom: undefined,
-    prenom: undefined,
+    nom      : undefined,
+    prenom   : undefined,
     telephone: undefined,
-    email: undefined,
-    isValid: function(){
+    email    : undefined,
+    isValid  : function(){
         return this.nom && this.prenom && this.telephone && this.email;
     }
 }
@@ -35,11 +35,11 @@ var app = {
 
         // on ajoute une gestion d'événement
         document.getElementById('nom').addEventListener('blur', function(e){
-                var regexName =/[A-Z]{1}[a-z]{1,}/;
-                var erreur = "";
+                var regexName = /[A-Z]{1}[a-z]{1,}/;
+                var erreur    = "";
 
                 if(!regexName.test(e.target.value)){
-                    erreur ='Vous n avez pas le bon format de nom';
+                    erreur    = 'Vous n avez pas le bon format de nom';
                     model.nom = undefined;
                     e.target.classList.add('styleErreur');
                     e.target.classList.add('span');
@@ -56,11 +56,11 @@ var app = {
             });
 
             document.getElementById('prenom').addEventListener('blur', function(e){
-                var regexPrenom =/[a-z]/;
-                var erreur = "";
+                var regexPrenom = /[a-z]/;
+                var erreur      = "";
 
                 if(!regexPrenom.test(e.target.value)){
-                    erreur ='Vous n avez pas le bon format de nom';
+                    erreur       = 'Vous n avez pas le bon format de nom';
                     model.prenom = undefined;
                     e.target.classList.add('styleErreur');
                     e.target.classList.add('span');
@@ -76,11 +76,11 @@ var app = {
             });
 
             document.getElementById('telephone').addEventListener('blur', function(e){
-                var regexTel =/[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}/;
-                erreur = "";
+                var regexTel = /[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}/;
+                erreur       = "";
 
                 if(!regexTel.test(e.target.value)){
-                    erreur ='Vous n avez pas le bon format de numero';
+                    erreur          = 'Vous n avez pas le bon format de numero';
                     model.telephone = undefined;
                     // erreur.classList.add('textErreur');
                     e.target.classList.add('styleErreur');
@@ -98,7 +98,7 @@ var app = {
 
             document.getElementById('mail').addEventListener('blur', function(e){
                 var regexEmail = /.+@.+\..+/;
-                erreur = "";
+                erreur         = "";
 
                 if(!regexEmail.test(e.target.value)) {
                     erreur ='Vous n avez pas le bon format d email';
